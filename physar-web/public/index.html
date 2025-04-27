@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PhysAR: A Física em Suas Mãos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@webxr-input-profiles/motion-controllers"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/webxr/ARButton.js"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="bg-blue-600 text-white p-4 shadow-md">
+    <h1 class="text-3xl font-bold">PhysAR: A Física em Suas Mãos</h1>
+  </header>
+
+  <main class="flex-grow p-4">
+    <section id="ar-container" class="w-full h-[600px] bg-white rounded-lg shadow-md mb-6">
+      <!-- AR Canvas will be injected here -->
+    </section>
+
+    <section id="quiz-mode" class="hidden bg-white rounded-lg shadow-md p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Modo Quiz</h2>
+      <div id="quiz-content" class="mb-4"></div>
+      <button id="start-quiz" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Iniciar Quiz
+      </button>
+    </section>
+
+    <section id="stats-panel" class="hidden bg-white rounded-lg shadow-md p-4 mb-6">
+      <h2 class="text-xl font-semibold mb-4">Estatísticas em Tempo Real</h2>
+      <div id="stats-content" class="text-gray-700"></div>
+    </section>
+
+    <section id="creator-mode" class="hidden bg-white rounded-lg shadow-md p-4">
+      <h2 class="text-xl font-semibold mb-4">Modo Criador</h2>
+      <div id="creator-content" class="text-gray-700"></div>
+    </section>
+
+    <section id="leaderboard" class="bg-white rounded-lg shadow-md p-4 mb-6">
+      <!-- Leaderboard UI will be injected here -->
+    </section>
+  </main>
+
+  <footer class="bg-blue-600 text-white p-4 text-center">
+    &copy; 2024 PhysAR - Feira de Ciências
+  </footer>
+
+  <script type="module" src="../src/app.js"></script>
+</body>
+</html>
